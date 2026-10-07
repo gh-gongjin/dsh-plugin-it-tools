@@ -199,7 +199,7 @@ window.__ModuleLoader__.load({
           const b = document.createElement('button');
           b.className = state.group === key ? 'on' : '';
           b.innerHTML = `<span>${esc(label)}${en ? ` <span class="en">${esc(en)}</span>` : ''}</span><span class="n">${counts[key] ?? 0}</span>`;
-          b.onclick = () => { state.group = key; renderAll(); };
+          b.onclick = () => { state.group = key; state.active = 'home'; renderAll(); };
           rail.appendChild(b);
         };
         item('all', '全部工具');

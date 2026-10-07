@@ -218,3 +218,9 @@ fork zh.yml 覆盖实测：8271 叶子键缺 43（全为 fork 新工具内部报
 - 功能验 `tmp/verify-fav.mjs`（同源夹具真点击，不拿 regex 当效果断言）：**10/10 PASS**——点两星（跨 JSON/转换器两组）→ 点栏 → 2 卡/2 分组头/「筛选出 2」/栏计数 2；撤一剩一、全撤走 `itp-empty` 空态提示（非白屏）。截图 `tmp/shots/s8-fav-view.png`。
   过程自纠两处：初稿含 `|| true` 假断言（撤掉，改成「剩 1 卡」真读数）、`/base64-converter` 目录里不存在（改 `/base64-string-converter`，grep 目录核对）。
 - 离线回归 5 文件 / 164 项全绿（EXIT=0）。**client.js 又动 ⇒ 用户需再重启宿主**，复验点=点「★ 收藏」应列出已收藏工具（按分组带组头）。
+
+### 9.10 分类栏不切回首页案（2026-10-07，用户贴图「我在具体的页签，再点边栏，不会自动切换」）
+- 根因：rail 项 `b.onclick` 只改 `state.group` 不改 `state.active`——工具页签开着时 `renderAll` 走工具分支，首页清单根本不渲染（选中态/页头「筛选出 16」都更新了，独独视图没切，与截图一致）。搜索框路径早就有 `state.active='home'`（S1 裁定「搜索即回首页清单」），rail 是漏了同款动作。
+- 修复：rail onclick 补 `state.active = 'home'`（页签不关，只把活动切回首页）。
+- 功能验 `tmp/verify-rail-switch.mjs`：开工具页签→点「日期与时间」⇒ 10/10 PASS（首页可见、16 卡、工具 wrap 隐藏不销毁、页头/栏选中态/活动页签三处读数齐、点页签可切回）。截图 `tmp/shots/s8-rail-switch-home.png`。
+- 离线面 **5 文件 / 165 项全绿**（client 24→25：rail onclick 回首页钉）。**client.js 动 ⇒ 需重启宿主**。
