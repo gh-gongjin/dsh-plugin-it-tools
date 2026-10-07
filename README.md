@@ -7,7 +7,7 @@ dsh 面板内的 IT 工具箱：it-tools（[sharevb fork](https://github.com/sha
 
 ## 状态
 
-- **S1 骨架 + S3 装配 + S5 全量 + S6 壳修正（离线面）**：宿主半边 + 面板半边 + 离线测试 **5 文件 / 164 项全绿**（`node test/run-all.mjs`）。
+- **S1 骨架 + S3 装配 + S5 全量 + S6 壳修正（离线面）**：宿主半边 + 面板半边 + 离线测试 **5 文件 / 167 项全绿**（`node test/run-all.mjs`）。
 - **dist 全量就位**（2026-10-05，用户裁定「要全量」，此前的 50 工具深裁剪作废回退）：fork `vite build`
   产物 **182MB / 2411 文件** 原样拷入，盘上 `tools-filter.json` 为 `{}` ⇒ SPA 全留；
   预置中文 / 隐藏 chrome / SW 自注销桩 / wasm 裸名重写全部由路由伺服侧注入（源码零改动，spec §2/§9.3/§9.6）。
@@ -18,6 +18,8 @@ dsh 面板内的 IT 工具箱：it-tools（[sharevb fork](https://github.com/sha
 - **真机二轮（2026-10-06 用户贴图）**：黑条已蓝、474 全量上屏；新两案=页签无手型光标（补 `cursor:pointer`）、
   切页签 iframe 重建丢输入（改 toolViews 常驻复用，只隐藏不销毁）。同源夹具功能验 `tmp/verify-tabs-persist.mjs` **7/7**
   （真写值→切走→切回读回原值）。**client.js 又动了 ⇒ 再重启一次宿主复验**（spec §9.7）。
+- **真机三轮（2026-10-07 用户贴图）**：收藏页白屏案（fav 被当分组名过滤，spec §9.9）、分类栏不切回案（rail 漏 `active='home'`，spec §9.10）；
+  新增「⚡ 常用」栏——打开工具自动记次、按频率降序排列（spec §9.11，功能验 `tmp/verify-usage.mjs` 11/11）。**需重启宿主**。
 
 ## 布局
 

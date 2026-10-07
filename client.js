@@ -90,6 +90,7 @@ window.__ModuleLoader__.load({
 .itp-badge{font-size:11px;padding:1px 7px;border-radius:9px;background:var(--itp-badge);color:var(--itp-fg-dim)}
 .itp-badge.fork{color:#7aa7ff}
 .itp-badge.net{color:#d99a4e}
+.itp-badge.use{color:var(--itp-accent)}
 .itp-empty{padding:60px 0;text-align:center;color:var(--itp-fg-dim)}
 .itp-tool{display:flex;flex-direction:column;height:100%}
 .itp-tool-note{flex:none;display:flex;gap:14px;align-items:center;padding:6px 14px;border-bottom:1px solid var(--itp-line);background:var(--itp-panel2);color:var(--itp-fg-dim);font-size:12px}
@@ -114,7 +115,7 @@ window.__ModuleLoader__.load({
     // ------------------------------------------------------------
     // 2) 壳：命令式 DOM（与 prototype 同一份逻辑，数据改走 api 载荷）
     // ------------------------------------------------------------
-    const LS = { fav: 'dsh-itp:fav', theme: 'dsh-itp:theme', tab: 'dsh-itp:open-tabs' };
+    const LS = { fav: 'dsh-itp:fav', theme: 'dsh-itp:theme', tab: 'dsh-itp:open-tabs', usage: 'dsh-itp:usage' };
     function loadLS(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } }
     function saveLS(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* 宿主禁存储时只是丢页签，不炸壳 */ } }
     function esc(s) { return String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
@@ -157,8 +158,25 @@ window.__ModuleLoader__.load({
         open: Array.isArray(loadLS(LS.tab, [])) ? loadLS(LS.tab, []).filter((d) => TOOLS.some((t) => t.dir === d)) : [],
         active: 'home',
         fav: new Set(loadLS(LS.fav, [])),
+        // 使用计数 dir -> {n 次数, t 最近打开}：打开工具即记，「⚡ 常用」栏按 n 降序（S8 用户裁定）
+        usage: (() => {
+          const raw = loadLS(LS.usage, {});
+          const out = {};
+          if (raw && typeof raw === 'object') {
+            for (const [d, u] of Object.entries(raw)) {
+              if (u && typeof u.n === 'number' && u.n > 0) out[d] = { n: u.n, t: typeof u.t === 'number' ? u.t : 0 };
+            }
+          }
+          return out;
+        })(),
         showTop: false,
       };
+      function recordUse(dir) {
+        const u = state.usage[dir] || { n: 0, t: 0 };
+        u.n += 1; u.t = Date.now();
+        state.usage[dir] = u;
+        saveLS(LS.usage, state.usage);
+      }
 
       const root = document.createElement('div');
       root.className = 'itp-shell';
@@ -184,14 +202,15 @@ window.__ModuleLoader__.load({
 
       function matches(t) {
         if (state.group === 'fav' && !state.fav.has(t.dir)) return false;
-        if (state.group !== 'all' && state.group !== 'fav' && t.group !== state.group) return false;
+        if (state.group === 'used' && !(state.usage[t.dir] && state.usage[t.dir].n > 0)) return false;
+        if (state.group !== 'all' && state.group !== 'fav' && state.group !== 'used' && t.group !== state.group) return false;
         const q = state.query.trim().toLowerCase();
         if (!q) return true;
         return (t.zh + ' ' + t.dir + ' ' + t.desc + ' ' + t.path + ' ' + t.cat + ' ' + t.group).toLowerCase().includes(q);
       }
 
       function renderRail() {
-        const counts = { all: TOOLS.length, fav: state.fav.size };
+        const counts = { all: TOOLS.length, fav: state.fav.size, used: Object.keys(state.usage).length };
         for (const t of TOOLS) counts[t.group] = (counts[t.group] || 0) + 1;
         const rail = $('.itp-rail');
         rail.innerHTML = '';
@@ -204,6 +223,7 @@ window.__ModuleLoader__.load({
         };
         item('all', '全部工具');
         item('fav', '★ 收藏');
+        item('used', '⚡ 常用');
         const sep = document.createElement('div'); sep.className = 'sep'; rail.appendChild(sep);
         for (const g of GROUP_ORDER) item(g, g, CAT_OF[g]);
       }
@@ -241,6 +261,7 @@ window.__ModuleLoader__.load({
         renderAll();
       }
       function openTool(dir) {
+        recordUse(dir);
         if (!state.open.includes(dir)) state.open.push(dir);
         state.active = dir;
         saveLS(LS.tab, state.open);
@@ -258,6 +279,7 @@ window.__ModuleLoader__.load({
         const badges = [];
         if (t.forkOnly && demo) badges.push('<span class="itp-badge fork">fork 新增</span>');
         if (t.needsNet) badges.push('<span class="itp-badge net">需联网</span>');
+        if (state.group === 'used') badges.push(`<span class="itp-badge use">已用 ${state.usage[t.dir].n} 次</span>`);
         c.innerHTML = `
           <span class="nm">${esc(t.zh)}</span>
           <span class="ds">${esc(t.desc)}</span>
@@ -280,7 +302,20 @@ window.__ModuleLoader__.load({
         if (homeBox) homeBox.remove();
         homeBox = document.createElement('div');
         if (!list.length) {
-          homeBox.innerHTML = '<div class="itp-empty">没有匹配的工具，换个关键词试试</div>';
+          homeBox.innerHTML = `<div class="itp-empty">${
+            state.group === 'used' ? '还没有常用工具——打开过的工具会自动记录在这里，按使用频率排序。'
+              : state.group === 'fav' ? '还没有收藏工具——点卡片右上角 ★ 收藏。'
+              : '没有匹配的工具，换个关键词试试'}</div>`;
+        } else if (state.group === 'used') {
+          // 常用=按频率排的单一平铺清单（用户裁定「根据使用频率自动排序」，不按分组打散次序）
+          homeBox.className = 'itp-home';
+          const ranked = list.slice().sort((a, b) => state.usage[b.dir].n - state.usage[a.dir].n || state.usage[b.dir].t - state.usage[a.dir].t);
+          const hh = document.createElement('div'); hh.className = 'itp-group-h';
+          hh.innerHTML = `<span>⚡ 常用</span><span class="gc">按使用频率 · ${ranked.length} 个</span>`;
+          homeBox.appendChild(hh);
+          const grid = document.createElement('div'); grid.className = 'itp-grid';
+          for (const t of ranked) grid.appendChild(card(t));
+          homeBox.appendChild(grid);
         } else {
           homeBox.className = 'itp-home';
           const groups = GROUP_ORDER.filter((g) => list.some((t) => t.group === g));

@@ -22,6 +22,9 @@ ok(src.includes('const toolViews = new Map()'), '工具页 iframe 常驻容器 t
 ok(!src.includes("view.innerHTML = ''"), 'renderAll 不再整区清空（清空=销毁 iframe 的旧形态）');
 // S8（用户贴图：工具页签里点分类栏不切回）：rail onclick 必须同时把 active 收回 home
 ok(/b\.onclick = \(\) => \{ state\.group = key; state\.active = 'home'; renderAll\(\); \}/.test(src), 'rail onclick 切组同时回首页清单');
+// S8 常用栏：打开工具即记次（openTool 里 recordUse），存储键与收藏/页签同族
+ok(src.includes("usage: 'dsh-itp:usage'"), 'usage 存储键在位');
+ok(/function openTool\(dir\) \{\s*recordUse\(dir\);/.test(src), 'openTool 第一动作就是 recordUse（记次面）');
 
 section('ModuleLoader 契约');
 let loaded = null;
