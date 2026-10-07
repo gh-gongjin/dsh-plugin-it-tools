@@ -284,7 +284,9 @@ window.__ModuleLoader__.load({
         } else {
           homeBox.className = 'itp-home';
           const groups = GROUP_ORDER.filter((g) => list.some((t) => t.group === g));
-          for (const g of (state.group === 'all' || state.query ? groups : [state.group])) {
+          // fav 不是工具分组名：与 all 一样按命中项的真实分组渲染，否则按 [state.group] 过滤恒空（真机白屏病历）
+          const byRealGroup = state.group === 'all' || state.group === 'fav' || state.query;
+          for (const g of (byRealGroup ? groups : [state.group])) {
             const items = list.filter((t) => t.group === g);
             if (!items.length) continue;
             const hh = document.createElement('div'); hh.className = 'itp-group-h';

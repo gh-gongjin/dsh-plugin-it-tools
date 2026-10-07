@@ -211,3 +211,10 @@ fork zh.yml 覆盖实测：8271 叶子键缺 43（全为 fork 新工具内部报
 - `.gitignore` 收 tmp/、prototype/、node_modules、*.log（取证通道不发布）；`.gitattributes` 钉 `dist/** -text`+二进制档——autocrlf 会改伺服文件字节，wasm 裸名重写依赖运行时读到的原字节，不许仓库侧动。
 - 提交 `5203114`（2431 文件）；`gh api` 核对远端 main sha == 本地 HEAD；推送走 `-c http.proxy=http://127.0.0.1:7897`（历史病历：裸 push 被重置）。
 - 推送前后离线套件各跑一遍：5 文件 / 164 项全绿（EXIT=0）。
+
+### 9.9 收藏白屏案（2026-10-07，用户贴图「点了收藏后在哪里看」→ 点「★ 收藏」是空白」）
+- 根因（一行逻辑）：`renderHome` 的分组循环 `state.group === 'all' || state.query ? groups : [state.group]` 把 **fav 当成了工具分组名**——fav 态下按 `[state.group]` 过滤 `t.group === 'fav'` 恒空 ⇒ 页头「筛选出 1」对、卡片区白屏。收藏计数/存储/取消路径都健康（用户截图左栏「★ 收藏 1」即证）。
+- 修复：fav 与 all 同走真实分组渲染（`byRealGroup`）。
+- 功能验 `tmp/verify-fav.mjs`（同源夹具真点击，不拿 regex 当效果断言）：**10/10 PASS**——点两星（跨 JSON/转换器两组）→ 点栏 → 2 卡/2 分组头/「筛选出 2」/栏计数 2；撤一剩一、全撤走 `itp-empty` 空态提示（非白屏）。截图 `tmp/shots/s8-fav-view.png`。
+  过程自纠两处：初稿含 `|| true` 假断言（撤掉，改成「剩 1 卡」真读数）、`/base64-converter` 目录里不存在（改 `/base64-string-converter`，grep 目录核对）。
+- 离线回归 5 文件 / 164 项全绿（EXIT=0）。**client.js 又动 ⇒ 用户需再重启宿主**，复验点=点「★ 收藏」应列出已收藏工具（按分组带组头）。
