@@ -25,6 +25,8 @@ ok(/b\.onclick = \(\) => \{ state\.group = key; state\.active = 'home'; renderAl
 // S8 常用栏：打开工具即记次（openTool 里 recordUse），存储键与收藏/页签同族
 ok(src.includes("usage: 'dsh-itp:usage'"), 'usage 存储键在位');
 ok(/function openTool\(dir\) \{\s*recordUse\(dir\);/.test(src), 'openTool 第一动作就是 recordUse（记次面）');
+// S8 贴图「位置都不一致」：描述区固定两行高，slug/徽标基线跨卡齐平
+ok(/\.itp-card \.ds\{[^}]*line-height:1\.4;min-height:2\.8em/.test(src), '.ds 两行占高（slug/徽标行跨卡对齐）');
 
 section('ModuleLoader 契约');
 let loaded = null;

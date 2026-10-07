@@ -81,7 +81,7 @@ window.__ModuleLoader__.load({
 .itp-card{position:relative;display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid var(--itp-line);border-radius:var(--itp-radius);background:var(--itp-card);cursor:pointer}
 .itp-card:hover{background:var(--itp-card-hover);border-color:var(--itp-accent)}
 .itp-card .nm{color:var(--itp-fg-strong);font-weight:600;padding-right:26px}
-.itp-card .ds{color:var(--itp-fg-dim);font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.itp-card .ds{color:var(--itp-fg-dim);font-size:12.5px;line-height:1.4;min-height:2.8em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .itp-card .slug{color:var(--itp-fg-dim);font-size:11px;font-family:ui-monospace,Consolas,monospace;opacity:.75}
 .itp-card .fav{position:absolute;top:8px;right:8px;font-size:15px;line-height:1;padding:2px 4px;border-radius:4px;color:var(--itp-fg-dim)}
 .itp-card .fav:hover{background:var(--itp-badge)}
