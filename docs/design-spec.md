@@ -203,3 +203,11 @@ fork zh.yml 覆盖实测：8271 叶子键缺 43（全为 fork 新工具内部报
 - 离线面 **5 文件 / 164 项全绿**（client 21→24：页签 cursor 钉、toolViews 在位钉、`view.innerHTML=''` 反模式钉）。
 - 同轮贴图追加：「这个字感觉太小了点，比其他插件的小」（红框=壳标题）。对账兄弟插件页头：sysops/stock/appearance 17px、api-catalog/gh-trending/modelwatch 16px，本壳 15px 确实垫底 ⇒ `.itp-title` 15→**17px**（副文案 `.itp-count` 12px 与兄弟 `-sub` 一致，不动）。夹具出图核对 `tmp/shots/s5-home-full.png`。
 - 待用户复验：重启宿主后 ①页签悬停变手型 ②工具页填一半切走再切回，输入还在 ③标题与其他插件同高。
+
+### 9.8 建仓发布（2026-10-07，用户裁定「建独立公开仓」）
+- 仓库：`gh-gongjin/dsh-plugin-it-tools`（public，main，topic `dsh-plugin`+`it-tools`），插件根即仓根（`github:` 安装要求 package.json/cordis.yml 在顶层，同 sysops 形制）。
+- **许可改判 MIT→GPL-3.0-only**：仓内随带 it-tools（GPLv3）构建产物 `dist/` ⇒ 整仓按上游口径 GPL-3.0（LICENSE 与 fork 同文逐字节拷入）；package.json `license` 字段同步。README 增「安装（github:）/许可」两节。
+- dist 入仓裁定：`github:`/link: 挂载无宿主打包机制，dist 不进仓则装出来只能跑 demo ⇒ **182MB/2411 文件随仓**（预检：无 >50MB 单文件，GitHub 100MB 硬顶安全；`.git` 包体 66MB）。
+- `.gitignore` 收 tmp/、prototype/、node_modules、*.log（取证通道不发布）；`.gitattributes` 钉 `dist/** -text`+二进制档——autocrlf 会改伺服文件字节，wasm 裸名重写依赖运行时读到的原字节，不许仓库侧动。
+- 提交 `5203114`（2431 文件）；`gh api` 核对远端 main sha == 本地 HEAD；推送走 `-c http.proxy=http://127.0.0.1:7897`（历史病历：裸 push 被重置）。
+- 推送前后离线套件各跑一遍：5 文件 / 164 项全绿（EXIT=0）。
