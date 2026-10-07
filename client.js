@@ -81,12 +81,12 @@ window.__ModuleLoader__.load({
 .itp-card{position:relative;display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid var(--itp-line);border-radius:var(--itp-radius);background:var(--itp-card);cursor:pointer}
 .itp-card:hover{background:var(--itp-card-hover);border-color:var(--itp-accent)}
 .itp-card .nm{color:var(--itp-fg-strong);font-weight:600;padding-right:26px}
-.itp-card .ds{color:var(--itp-fg-dim);font-size:12.5px;line-height:1.4;min-height:2.8em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.itp-card .ds{color:var(--itp-fg-dim);font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .itp-card .slug{color:var(--itp-fg-dim);font-size:11px;font-family:ui-monospace,Consolas,monospace;opacity:.75}
 .itp-card .fav{position:absolute;top:8px;right:8px;font-size:15px;line-height:1;padding:2px 4px;border-radius:4px;color:var(--itp-fg-dim)}
 .itp-card .fav:hover{background:var(--itp-badge)}
 .itp-card .fav.on{color:#e0a63f}
-.itp-badges{display:flex;gap:5px;margin-top:2px}
+.itp-badges{display:flex;gap:5px;margin-top:auto;padding-top:2px}
 .itp-badge{font-size:11px;padding:1px 7px;border-radius:9px;background:var(--itp-badge);color:var(--itp-fg-dim)}
 .itp-badge.fork{color:#7aa7ff}
 .itp-badge.net{color:#d99a4e}

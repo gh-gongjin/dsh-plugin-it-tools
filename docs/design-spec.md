@@ -235,3 +235,6 @@ fork zh.yml 覆盖实测：8271 叶子键缺 43（全为 fork 新工具内部报
   修法：`.itp-card .ds` 固定两行占高（`line-height:1.4;min-height:2.8em`，clamp 本就有）。
   验收按几何不按眼：`verify-usage` 加 rect 断言——首页首行三卡 slug top `[231,231,231]`、常用两卡 slug/badge top `[231,231]`/`[254,254]`（±1px），14/14 PASS，截图 `tmp/shots/s8-usage-view.png`。
   离线面 **5 文件 / 168 项全绿**（client 27→28：`.ds` 两行占高钉）。
+- 再轮贴图（「这个开始是挨着的吗，怎么现在离这么远」，红框=短描述卡的 slug 与描述间空档）：上一修用「描述垫两行高」换徽标齐平，把缝塞进了描述与 slug 之间——判词收下，方案错了。
+  **终态口径**：`.ds` 撤 min-height（描述/slug 紧邻，gap 实测 4px），改 `.itp-badges{margin-top:auto}` 把徽标行钉卡底——网格行等高 ⇒ 徽标跨卡天然齐平（badge top 254/254、cardH 133/133），空档留在 slug 与徽标之间不再顶开正文。
+  几何断言随之改判据（verify-usage：0/5a 紧贴≤8px、5b 徽标齐、5c 等高，15/15 PASS，截图重出）；client.test 旧「min-height」钉换成「不垫高+margin-top:auto」两钉。离线 **5 文件 / 169 项全绿**。教训：齐平也要挑不伤内容流的锚点（[[feedback-layout-assertions-measure-geometry]]）。
