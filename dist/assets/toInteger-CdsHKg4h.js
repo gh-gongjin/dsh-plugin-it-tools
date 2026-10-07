@@ -1,0 +1,1 @@
+import{t as e}from"./isSymbol-CuJ7x3zC.js";function t(t){return e(t)?NaN:Number(t)}function n(e){return e?(e=t(e),e===1/0||e===-1/0?(e<0?-1:1)*Number.MAX_VALUE:e===e?e:0):e===0?e:0}function r(e){let t=n(e),r=t%1;return r?t-r:t}export{t as n,r as t};

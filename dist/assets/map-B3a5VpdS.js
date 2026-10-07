@@ -1,0 +1,1 @@
+import{t as e}from"./isArrayLike-BS_PKJs1.js";import{t}from"./iteratee-CCpVczuF.js";import{t as n}from"./identity-Dfvzj6n2.js";import{t as r}from"./range-CYTESHT1.js";function i(i,a){if(!i)return[];let o=e(i)||Array.isArray(i)?r(0,i.length):Object.keys(i),s=t(a??n),c=Array(o.length);for(let e=0;e<o.length;e++){let t=o[e],n=i[t];c[e]=s(n,t,i)}return c}export{i as t};

@@ -1,0 +1,1 @@
+import{t as e}from"./create-injection-key-Dfvzj6n2.js";var t=e(`n-config-provider`);export{t};

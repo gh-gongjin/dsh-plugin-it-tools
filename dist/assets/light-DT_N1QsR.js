@@ -1,0 +1,1 @@
+import{t as e}from"./light-CLwlD-S_.js";function t(e){let{textColor1:t,dividerColor:n,fontWeightStrong:r}=e;return{textColor:t,color:n,fontWeight:r}}var n={name:`Divider`,common:e,self:t};export{t as n,n as t};

@@ -1,0 +1,1 @@
+import{P as e,j as t,m as n}from"./isArrayLikeObject-C-6V7-OQ.js";import{y as r}from"./_baseEach-Bb6B-PNk.js";function i(){}var a=e?e.isConcatSpreadable:void 0;function o(e){return t(e)||n(e)||!!(a&&e&&e[a])}function s(e,t,n,i,a){var c=-1,l=e.length;for(n||=o,a||=[];++c<l;){var u=e[c];t>0&&n(u)?t>1?s(u,t-1,n,i,a):r(a,u):i||(a[a.length]=u)}return a}export{i as n,s as t};

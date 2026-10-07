@@ -1,0 +1,1 @@
+import{t as e}from"./light-CLwlD-S_.js";function t(e){let{textColor2:t,textColor3:n,fontSize:r,fontWeight:i}=e;return{labelFontSize:r,labelFontWeight:i,valueFontWeight:i,valueFontSize:`24px`,labelTextColor:n,valuePrefixTextColor:t,valueSuffixTextColor:t,valueTextColor:t}}var n={name:`Statistic`,common:e,self:t};export{n,t};

@@ -1,0 +1,1 @@
+function e(t){if(t==null)return``;if(typeof t==`string`)return t;if(Array.isArray(t))return t.map(e).join(`,`);let n=String(t);return n===`0`&&Object.is(Number(t),-0)?`-0`:n}export{e as t};

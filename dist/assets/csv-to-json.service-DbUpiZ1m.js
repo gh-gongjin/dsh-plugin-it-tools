@@ -1,0 +1,4 @@
+import{o as e}from"./rolldown-runtime-DAXXjFlN.js";import{t}from"./detect-csv-D1OcCdNH.js";var n=e(t(),1);function r(e,t){return e.trim()===``?[]:e.split(`
+`)[0].split(RegExp(`[${t}]`)).map(e=>e.trim())}function i(e,t){if(e===`null`)return null;if(e===``||e===void 0)return;let n=e.replace(/\\n/g,`
+`).replace(/\\r/g,`\r`).replace(/\\"/g,`"`);if(n.startsWith(`"`)&&n.endsWith(`"`))return n.slice(1,-1);if(!t)return n;try{return JSON.parseBigNum(n)}catch{return n}}function a(e,t=!1){let a=(0,n.default)(e)?.delimiter||`,`,o=r(e,a);return e.split(`
+`).slice(1).map(e=>{let n=e.split(RegExp(`[${a}](?=(?:(?:[^"]*"){2})*[^"]*$)`)).map(e=>e.trim());return o.reduce((e,r,a)=>(e[r]=i(n[a],t),e),{})})}export{a as t};

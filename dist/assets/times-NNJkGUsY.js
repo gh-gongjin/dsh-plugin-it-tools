@@ -1,0 +1,1 @@
+import{t as e}from"./toInteger-CdsHKg4h.js";function t(t,n){if(t=e(t),t<1||!Number.isSafeInteger(t))return[];let r=Array(t);for(let e=0;e<t;e++)r[e]=typeof n==`function`?n(e):e;return r}export{t};

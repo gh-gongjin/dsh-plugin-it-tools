@@ -1,0 +1,6 @@
+import{o as e}from"./rolldown-runtime-DAXXjFlN.js";import{A as t,Et as n,F as r,S as i,q as a,ut as o}from"./vue.runtime.esm-bundler-DZZTqpJU.js";import{t as s}from"./dist-CcFCmzk9.js";import{n as c}from"./vue-i18n.runtime-CdHdz6Iq.js";import{t as l}from"./defaults-CYWGbL02.js";import{t as u}from"./FormatTransformer-CLmOzBNF.js";import{n as d}from"./dist-DUll1gT2.js";r(),o();var f=e(s(),1),p=`{
+  users: [
+    { id: 1, name: 'Alice', role: 'admin' },
+    { id: 2, name: 'Bob', role: 'user' }
+  ]
+}`,m=t({__name:`json-to-toon`,setup(e){let{t}=c();function r(e){return l(()=>e===``?``:d(JSON.parseBigNum(e)),``)}let o=[{validator:e=>e===``||f.default.parse(e),message:t(`tools.json-to-toon.texts.message-provided-json-is-not-valid`)}];return(e,s)=>{let c=u;return a(),i(c,{"input-label":n(t)(`tools.json-to-toon.texts.input-label-your-raw-json`),"input-default":p,"input-placeholder":n(t)(`tools.json-to-toon.texts.input-placeholder-paste-your-raw-json-here`),"output-label":n(t)(`tools.json-to-toon.texts.output-label-toon-version-of-your-json`),"input-validation-rules":o,transformer:r,"download-file-name":`output.toon`},null,8,[`input-label`,`input-placeholder`,`output-label`])}}});export{m as default};

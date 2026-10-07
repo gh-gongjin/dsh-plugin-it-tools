@@ -1,0 +1,7 @@
+# 取证与演示目录：本地通道，不随仓发布
+tmp/
+prototype/
+
+node_modules/
+*.log
+.DS_Store

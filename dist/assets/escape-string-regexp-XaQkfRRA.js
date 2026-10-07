@@ -1,0 +1,1 @@
+import{t as e}from"./rolldown-runtime-DAXXjFlN.js";var t=e(((e,t)=>{t.exports=e=>{if(typeof e!=`string`)throw TypeError(`Expected a string`);return e.replace(/[|\\{}()[\]^$+*?.]/g,`\\$&`).replace(/-/g,`\\x2d`)}}));export{t};

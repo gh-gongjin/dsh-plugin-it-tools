@@ -1,0 +1,1 @@
+var{toString:e}=Object.prototype;function t(t){return e.call(t)===`[object RegExp]`}export{t};

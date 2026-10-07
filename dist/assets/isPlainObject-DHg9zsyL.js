@@ -1,0 +1,1 @@
+function e(e){return Object.prototype.toString.call(e).slice(8,-1)}function t(t){if(e(t)!==`Object`)return!1;let n=Object.getPrototypeOf(t);return!!n&&n.constructor===Object&&n===Object.prototype}export{e as n,t};

@@ -1,0 +1,1 @@
+import{r as e}from"./dist-BShVjscH.js";export{e as xml};

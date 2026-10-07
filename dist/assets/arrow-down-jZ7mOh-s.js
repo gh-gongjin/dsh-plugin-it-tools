@@ -1,0 +1,1 @@
+import{F as e,mt as t,q as n,ut as r,w as i,x as a}from"./vue.runtime.esm-bundler-DZZTqpJU.js";r(),e();var o={viewBox:`0 0 24 24`,width:`1.2em`,height:`1.2em`};function s(e,t){return n(),i(`svg`,o,[...t[0]||=[a(`path`,{fill:`currentColor`,d:`M11 4h2v12l5.5-5.5l1.42 1.42L12 19.84l-7.92-7.92L5.5 10.5L11 16z`},null,-1)]])}var c=t({name:`mdi-arrow-down`,render:s});export{c as t};

@@ -1,0 +1,1 @@
+import{A as e,F as t,N as n}from"./vue.runtime.esm-bundler-DZZTqpJU.js";t();var r=e({props:{onFocus:Function,onBlur:Function},setup(e){return()=>n(`div`,{style:`width: 0; height: 0`,tabindex:0,onFocus:e.onFocus,onBlur:e.onBlur})}});export{r as t};

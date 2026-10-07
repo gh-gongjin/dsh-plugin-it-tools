@@ -1,0 +1,1 @@
+import{n as e,t}from"./toDate-BEuseP9D.js";import{t as n}from"./addDays-B4r4N3NK.js";import{t as r}from"./addMonths-CWIIucw4.js";function i(i,a,o){let{years:s=0,months:c=0,weeks:l=0,days:u=0,hours:d=0,minutes:f=0,seconds:p=0}=a,m=t(i,o?.in),h=c||s?r(m,c+s*12):m,g=u||l?n(h,u+l*7):h,_=(p+(f+d*60)*60)*1e3;return e(o?.in||i,+g+_)}export{i as t};

@@ -1,0 +1,1 @@
+import{n as e}from"./isArguments-CciOGZJ5.js";function t(t){return e(t)}export{t};

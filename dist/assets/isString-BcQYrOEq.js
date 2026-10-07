@@ -1,0 +1,1 @@
+function e(e){return typeof e==`string`||e instanceof String}export{e as t};

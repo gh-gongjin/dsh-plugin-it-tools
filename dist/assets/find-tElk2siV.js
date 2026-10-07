@@ -1,0 +1,1 @@
+import{t as e}from"./iteratee-CCpVczuF.js";import{t}from"./identity-Dfvzj6n2.js";function n(n,r=t,i=0){if(!n)return;i<0&&(i=Math.max(n.length+i,0));let a=e(r);if(!Array.isArray(n)){let e=Object.keys(n);for(let t=i;t<e.length;t++){let r=e[t],i=n[r];if(a(i,r,n))return i}return}return n.slice(i).find(a)}export{n as t};

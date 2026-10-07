@@ -1,0 +1,1 @@
+import{D as e,F as t}from"./vue.runtime.esm-bundler-DZZTqpJU.js";t();function n(t,...n){return typeof t==`function`?t(...n):typeof t==`string`?e(t):typeof t==`number`?e(String(t)):null}export{n as t};

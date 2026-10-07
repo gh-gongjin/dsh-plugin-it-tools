@@ -1,0 +1,1 @@
+import{t as e}from"./isArrayLike-BS_PKJs1.js";import{t}from"./iteratee-CCpVczuF.js";import{t as n}from"./identity-Dfvzj6n2.js";function r(e,t){let n={};for(let r=0;r<e.length;r++){let i=e[r],a=t(i,r,e);Object.hasOwn(n,a)||(n[a]=[]),n[a].push(i)}return n}function i(i,a){return i==null?{}:r(e(i)?Array.from(i):Object.values(i),t(a??n))}export{i as t};

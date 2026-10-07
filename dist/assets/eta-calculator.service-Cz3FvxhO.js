@@ -1,0 +1,1 @@
+import{t as e}from"./formatDuration-ByUD_jYJ.js";function t(t){let n=Math.floor(t%1e3),r=Math.floor((t-n)/1e3%60),i=Math.floor(((t-n)/1e3-r)/60%60);return e({hours:Math.floor((((t-n)/1e3-r)/60-i)/60),minutes:i,seconds:r})+(n>0?` ${n} ms`:``)}export{t};

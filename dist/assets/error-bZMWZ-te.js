@@ -1,0 +1,1 @@
+import{i as e}from"./isArguments-CciOGZJ5.js";import{t}from"./isObject-CrpOy2QQ.js";import{t as n}from"./has-COwK5R--.js";import{t as r}from"./isString-BcQYrOEq.js";function i(t){return e(t)===`[object Error]`}function a(e){try{e();return}catch(e){return r(e)?e:i(e)||t(e)&&n(e,`message`)?e.message:`An error as occurred.`}}export{a as t};

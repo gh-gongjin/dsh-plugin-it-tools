@@ -1,0 +1,1 @@
+import{t as e}from"./merge-C021gfbF.js";function t(e,t){if(!e.includes(`.`))return{[e]:t};let n=e.replace(/\\./g,`_____dot_____`),r=t,i={},a=Array.from(n.matchAll(/[^.]+/g),([e])=>e),o=i,s=0;for(let e of a){let t=e.replace(/_____dot_____/g,`.`),n=s++===a.length-1?r:{};o[t]=n,o=n}return i}function n(n){return Object.entries(n).reduce((n,[r,i])=>e(n,t(r,i)),{})}export{n as t};

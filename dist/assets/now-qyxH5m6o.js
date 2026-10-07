@@ -1,0 +1,1 @@
+import{F as e}from"./isArrayLikeObject-C-6V7-OQ.js";var t=function(){return e.Date.now()};export{t};

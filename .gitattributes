@@ -1,0 +1,6 @@
+dist/** -text
+*.wasm binary
+*.png binary
+*.ttf binary
+*.woff binary
+*.woff2 binary

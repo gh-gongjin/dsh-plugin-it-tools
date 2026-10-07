@@ -1,0 +1,10 @@
+# dsh-plugin-it-tools —— bundle patch
+# 顶层是 patch 条目数组：把本插件插进 profile 的插件树。
+#
+# 安装后在 profile 的 cordis.patch.yml 里可按 id 覆盖或停用它：
+#   - id: it-tools
+#     disabled: true
+
+- insert:
+    - id: it-tools
+      name: dsh-plugin-it-tools

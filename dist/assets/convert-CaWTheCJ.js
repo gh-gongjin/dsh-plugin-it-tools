@@ -1,0 +1,1 @@
+var e=function(e){return e[e.BASE_2=1024]=`BASE_2`,e[e.BASE_10=1e3]=`BASE_10`,e}({});function t(e,t=2,n=1024){if(e===0)return`0 Bytes`;let r=n,i=[`Bytes`,`KB`,`MB`,`GB`,`TB`,`PB`,`EB`,`ZB`,`YB`],a=Math.floor(Math.log(e)/Math.log(r));return`${Number.parseFloat((e/r**a).toFixed(t))} ${i[a]}`}export{t as n,e as t};

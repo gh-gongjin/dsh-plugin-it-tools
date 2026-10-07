@@ -1,0 +1,1 @@
+function e({ip:e}){let[t]=e.split(`.`).map(Number);if(t<128)return`A`;if(t>127&&t<192)return`B`;if(t>191&&t<224)return`C`;if(t>223&&t<240)return`D`;if(t>239&&t<256)return`E`}export{e as t};

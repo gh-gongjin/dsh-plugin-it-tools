@@ -1,0 +1,1 @@
+import{ut as e,vt as t}from"./vue.runtime.esm-bundler-DZZTqpJU.js";import{n,t as r}from"./queryParams-BlxtLRmZ.js";e();function i({urlStorageKey:e,authStorageKey:i,defaultUrl:a=`http://localhost:8000`}){let o=String(r(e,``)||``).trim(),s=String(r(i,``)||``).trim(),c=!!o;return{serverHost:c?t(o):n(e,a),serverAuth:c?t(s):n(i,``),hasFixedConfig:c}}export{i as t};

@@ -1,0 +1,1 @@
+function e(e,t){let{target:n}=e;for(;n;){if(n.dataset&&n.dataset[t]!==void 0)return!0;n=n.parentElement}return!1}export{e as t};

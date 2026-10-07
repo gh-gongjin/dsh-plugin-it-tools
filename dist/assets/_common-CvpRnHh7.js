@@ -1,0 +1,1 @@
+var e={actionMargin:`0 0 0 20px`,actionMarginRtl:`0 20px 0 0`};export{e as t};

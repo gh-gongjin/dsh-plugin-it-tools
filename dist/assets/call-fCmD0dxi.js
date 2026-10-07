@@ -1,0 +1,1 @@
+function e(t,...n){if(Array.isArray(t))t.forEach(t=>e(t,...n));else return t(...n)}export{e as t};

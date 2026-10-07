@@ -1,0 +1,1 @@
+import{n as e}from"./merge-Cl0G_-b5.js";import{i as t}from"./isArguments-CciOGZJ5.js";function n(n){return typeof n==`number`||e(n)&&t(n)===`[object Number]`}export{n as t};

@@ -1,0 +1,1 @@
+var e={};function t(){return e}export{t};

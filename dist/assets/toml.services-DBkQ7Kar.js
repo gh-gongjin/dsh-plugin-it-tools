@@ -1,0 +1,1 @@
+import{n as e}from"./boolean-CZ8eEzi6.js";import{n as t}from"./dist-BFL1WtOw.js";function n(n){return e(()=>t(n))}export{n as t};

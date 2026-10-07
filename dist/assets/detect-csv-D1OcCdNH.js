@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-DAXXjFlN.js";import{r as t,t as n}from"./dist-BB897RpD.js";var r=e(((e,r)=>{t(),r.exports=function(e,t){t||={},n.isBuffer(e)&&(e+=``);var r=t.delimiters||[`,`,`;`,`	`,`|`],a=t.newlines||[`
+`,`\r`],o=i(e.split(/[\n\r]+/g)[0],r),s=i(e,a);return o?{delimiter:o,newline:s}:null};function i(e,t){var n=!1,r={},i=0,a,o;t.forEach(function(e){r[e]=0});for(var s=0;s<e.length;s++)e[s]===`"`?n=!n:!n&&e[s]in r&&(o=++r[e[s]],o>i&&(i=o,a=e[s]));return a}}));export{r as t};

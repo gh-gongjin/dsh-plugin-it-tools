@@ -1,0 +1,1 @@
+var e=e=>Math.max(0,Math.min(255,Math.round(e)));function t(t,n){let r=t.length===9?t.slice(7):``,i=Number.parseInt(t.slice(1,7),16),a=e((i>>16&255)+n),o=e((i>>8&255)+n),s=e((i&255)+n);return`#${(a<<16|o<<8|s).toString(16).padStart(6,`0`)}${r}`}function n(e,n){return t(e,-n)}export{t as n,n as t};

@@ -1,0 +1,66 @@
+import{A as e,B as t,F as n,G as r,H as i,N as a,R as o,W as s,a as c,b as l,h as u,n as d,rt as f,ut as p,vt as m}from"./vue.runtime.esm-bundler-DZZTqpJU.js";import{c as h,d as g,n as _,s as v,u as y}from"./use-theme--pjWdM-N.js";import{t as b}from"./use-rtl-DxDqUyON.js";import{i as x,r as S,t as C}from"./css-DE6X-JUA.js";import{n as w,t as T}from"./delegate-CJ0pWS92.js";import{t as E}from"./VResizeObserver-CBatuD_H.js";import{t as D}from"./use-config-B_Ca_QT7.js";import{t as ee}from"./use-css-vars-class-LmlPa6Qd.js";import{t as O}from"./fade-in.cssr-Dizy9Zx7.js";import{t as te}from"./light-DA38hYdJ.js";function k(e){return e.composedPath()[0]||null}var A=(typeof window>`u`?!1:/iPad|iPhone|iPod/.test(navigator.platform)||navigator.platform===`MacIntel`&&navigator.maxTouchPoints>1)&&!window.MSStream;function ne(){return A}n();function re(e){let n={isDeactivated:!1},r=!1;return t(()=>{if(n.isDeactivated=!1,!r){r=!0;return}e()}),s(()=>{n.isDeactivated=!0,r||=!0}),n}function j(e){let{left:t,right:n,top:r,bottom:i}=S(e);return`${r} ${t} ${i} ${n}`}n();var M=e({render(){var e;return(e=this.$slots).default?.call(e)}}),ie=h(`scrollbar`,`
+ overflow: hidden;
+ position: relative;
+ z-index: auto;
+ height: 100%;
+ width: 100%;
+`,[v(`>`,[h(`scrollbar-container`,`
+ width: 100%;
+ overflow: scroll;
+ height: 100%;
+ min-height: inherit;
+ max-height: inherit;
+ scrollbar-width: none;
+ `,[v(`&::-webkit-scrollbar, &::-webkit-scrollbar-track-piece, &::-webkit-scrollbar-thumb`,`
+ width: 0;
+ height: 0;
+ display: none;
+ `),v(`>`,[h(`scrollbar-content`,`
+ box-sizing: border-box;
+ min-width: 100%;
+ `)])])]),v(`>, +`,[h(`scrollbar-rail`,`
+ position: absolute;
+ pointer-events: none;
+ user-select: none;
+ background: var(--n-scrollbar-rail-color);
+ -webkit-user-select: none;
+ `,[g(`horizontal`,`
+ height: var(--n-scrollbar-height);
+ `,[v(`>`,[y(`scrollbar`,`
+ height: var(--n-scrollbar-height);
+ border-radius: var(--n-scrollbar-border-radius);
+ right: 0;
+ `)])]),g(`horizontal--top`,`
+ top: var(--n-scrollbar-rail-top-horizontal-top); 
+ right: var(--n-scrollbar-rail-right-horizontal-top); 
+ bottom: var(--n-scrollbar-rail-bottom-horizontal-top); 
+ left: var(--n-scrollbar-rail-left-horizontal-top); 
+ `),g(`horizontal--bottom`,`
+ top: var(--n-scrollbar-rail-top-horizontal-bottom); 
+ right: var(--n-scrollbar-rail-right-horizontal-bottom); 
+ bottom: var(--n-scrollbar-rail-bottom-horizontal-bottom); 
+ left: var(--n-scrollbar-rail-left-horizontal-bottom); 
+ `),g(`vertical`,`
+ width: var(--n-scrollbar-width);
+ `,[v(`>`,[y(`scrollbar`,`
+ width: var(--n-scrollbar-width);
+ border-radius: var(--n-scrollbar-border-radius);
+ bottom: 0;
+ `)])]),g(`vertical--left`,`
+ top: var(--n-scrollbar-rail-top-vertical-left); 
+ right: var(--n-scrollbar-rail-right-vertical-left); 
+ bottom: var(--n-scrollbar-rail-bottom-vertical-left); 
+ left: var(--n-scrollbar-rail-left-vertical-left); 
+ `),g(`vertical--right`,`
+ top: var(--n-scrollbar-rail-top-vertical-right); 
+ right: var(--n-scrollbar-rail-right-vertical-right); 
+ bottom: var(--n-scrollbar-rail-bottom-vertical-right); 
+ left: var(--n-scrollbar-rail-left-vertical-right); 
+ `),g(`disabled`,[v(`>`,[y(`scrollbar`,`pointer-events: none;`)])]),v(`>`,[y(`scrollbar`,`
+ z-index: 1;
+ position: absolute;
+ cursor: pointer;
+ pointer-events: all;
+ background-color: var(--n-scrollbar-color);
+ transition: background-color .2s var(--n-scrollbar-bezier);
+ `,[O(),v(`&:hover`,`background-color: var(--n-scrollbar-color-hover);`)])])])])]);n(),p(),c();var N=e({name:`Scrollbar`,props:Object.assign(Object.assign({},_.props),{duration:{type:Number,default:0},scrollable:{type:Boolean,default:!0},xScrollable:Boolean,trigger:{type:String,default:`hover`},useUnifiedContainer:Boolean,triggerDisplayManually:Boolean,container:Function,content:Function,containerClass:String,containerStyle:[String,Object],contentClass:[String,Array],contentStyle:[String,Object],horizontalRailStyle:[String,Object],verticalRailStyle:[String,Object],onScroll:Function,onWheel:Function,onResize:Function,internalOnUpdateScrollLeft:Function,internalHoistYRail:Boolean,internalExposeWidthCssVar:Boolean,yPlacement:{type:String,default:`right`},xPlacement:{type:String,default:`bottom`}}),inheritAttrs:!1,setup(e){let{mergedClsPrefixRef:t,inlineThemeDisabled:n,mergedRtlRef:a}=D(e),o=b(`Scrollbar`,a,t),s=m(null),c=m(null),u=m(null),d=m(null),p=m(null),h=m(null),g=m(null),v=m(null),y=m(null),x=m(null),E=m(null),O=m(0),A=m(0),M=m(!1),N=m(!1),P=!1,F=!1,I,L,ae=0,oe=0,R=0,z=0,se=ne(),B=_(`Scrollbar`,`-scrollbar`,ie,te,e,t),V=l(()=>{let{value:e}=v,{value:t}=h,{value:n}=x;return e===null||t===null||n===null?0:Math.min(e,n*e/t+C(B.value.self.width)*1.5)}),ce=l(()=>`${V.value}px`),H=l(()=>{let{value:e}=y,{value:t}=g,{value:n}=E;return e===null||t===null||n===null?0:n*e/t+C(B.value.self.height)*1.5}),le=l(()=>`${H.value}px`),ue=l(()=>{let{value:e}=v,{value:t}=O,{value:n}=h,{value:r}=x;if(e===null||n===null||r===null)return 0;{let i=n-e;return i?t/i*(r-V.value):0}}),de=l(()=>`${ue.value}px`),fe=l(()=>{let{value:e}=y,{value:t}=A,{value:n}=g,{value:r}=E;if(e===null||n===null||r===null)return 0;{let i=n-e;return i?t/i*(r-H.value):0}}),pe=l(()=>`${fe.value}px`),U=l(()=>{let{value:e}=v,{value:t}=h;return e!==null&&t!==null&&t>e}),W=l(()=>{let{value:e}=y,{value:t}=g;return e!==null&&t!==null&&t>e}),me=l(()=>{let{trigger:t}=e;return t===`none`||M.value}),he=l(()=>{let{trigger:t}=e;return t===`none`||N.value}),G=l(()=>{let{container:t}=e;return t?t():c.value}),ge=l(()=>{let{content:t}=e;return t?t():u.value}),K=(t,n)=>{if(!e.scrollable)return;if(typeof t==`number`){J(t,n??0,0,!1,`auto`);return}let{left:r,top:i,index:a,elSize:o,position:s,behavior:c,el:l,debounce:u=!0}=t;(r!==void 0||i!==void 0)&&J(r??0,i??0,0,!1,c),l===void 0?a!==void 0&&o!==void 0?J(0,a*o,o,u,c):s===`bottom`?J(0,2**53-1,0,!1,c):s===`top`&&J(0,0,0,!1,c):J(0,l.offsetTop,l.offsetHeight,u,c)},q=re(()=>{e.container||K({top:O.value,left:A.value})}),_e=()=>{q.isDeactivated||Z()},ve=t=>{if(q.isDeactivated)return;let{onResize:n}=e;n&&n(t),Z()},ye=(t,n)=>{if(!e.scrollable)return;let{value:r}=G;r&&(typeof t==`object`?r.scrollBy(t):r.scrollBy(t,n||0))};function J(e,t,n,r,i){let{value:a}=G;if(a){if(r){let{scrollTop:r,offsetHeight:o}=a;if(t>r){t+n<=r+o||a.scrollTo({left:e,top:t+n-o,behavior:i});return}}a.scrollTo({left:e,top:t,behavior:i})}}function be(){we(),Te(),Z()}function xe(){Y()}function Y(){Se(),Ce()}function Se(){L!==void 0&&window.clearTimeout(L),L=window.setTimeout(()=>{N.value=!1},e.duration)}function Ce(){I!==void 0&&window.clearTimeout(I),I=window.setTimeout(()=>{M.value=!1},e.duration)}function we(){I!==void 0&&window.clearTimeout(I),M.value=!0}function Te(){L!==void 0&&window.clearTimeout(L),N.value=!0}function Ee(t){let{onScroll:n}=e;n&&n(t),X()}function X(){let{value:e}=G;e&&(O.value=e.scrollTop,A.value=e.scrollLeft*(o?.value?-1:1))}function De(){let{value:e}=ge;e&&(h.value=e.offsetHeight,g.value=e.offsetWidth);let{value:t}=G;t&&(v.value=t.offsetHeight,y.value=t.offsetWidth);let{value:n}=p,{value:r}=d;n&&(E.value=n.offsetWidth),r&&(x.value=r.offsetHeight)}function Oe(){let{value:e}=G;e&&(O.value=e.scrollTop,A.value=e.scrollLeft*(o?.value?-1:1),v.value=e.offsetHeight,y.value=e.offsetWidth,h.value=e.scrollHeight,g.value=e.scrollWidth);let{value:t}=p,{value:n}=d;t&&(E.value=t.offsetWidth),n&&(x.value=n.offsetHeight)}function Z(){e.scrollable&&(e.useUnifiedContainer?Oe():(De(),X()))}function ke(e){return!s.value?.contains(k(e))}function Ae(e){e.preventDefault(),e.stopPropagation(),F=!0,w(`mousemove`,window,je,!0),w(`mouseup`,window,Me,!0),oe=A.value,R=o?.value?window.innerWidth-e.clientX:e.clientX}function je(t){if(!F)return;I!==void 0&&window.clearTimeout(I),L!==void 0&&window.clearTimeout(L);let{value:n}=y,{value:r}=g,{value:i}=H;if(n===null||r===null)return;let a=(o?.value?window.innerWidth-t.clientX-R:t.clientX-R)*(r-n)/(n-i),s=r-n,c=oe+a;c=Math.min(s,c),c=Math.max(c,0);let{value:l}=G;if(l){l.scrollLeft=c*(o?.value?-1:1);let{internalOnUpdateScrollLeft:t}=e;t&&t(c)}}function Me(e){e.preventDefault(),e.stopPropagation(),T(`mousemove`,window,je,!0),T(`mouseup`,window,Me,!0),F=!1,Z(),ke(e)&&Y()}function Ne(e){e.preventDefault(),e.stopPropagation(),P=!0,w(`mousemove`,window,Q,!0),w(`mouseup`,window,$,!0),ae=O.value,z=e.clientY}function Q(e){if(!P)return;I!==void 0&&window.clearTimeout(I),L!==void 0&&window.clearTimeout(L);let{value:t}=v,{value:n}=h,{value:r}=V;if(t===null||n===null)return;let i=(e.clientY-z)*(n-t)/(t-r),a=n-t,o=ae+i;o=Math.min(a,o),o=Math.max(o,0);let{value:s}=G;s&&(s.scrollTop=o)}function $(e){e.preventDefault(),e.stopPropagation(),T(`mousemove`,window,Q,!0),T(`mouseup`,window,$,!0),P=!1,Z(),ke(e)&&Y()}f(()=>{let{value:e}=W,{value:n}=U,{value:r}=t,{value:i}=p,{value:a}=d;i&&(e?i.classList.remove(`${r}-scrollbar-rail--disabled`):i.classList.add(`${r}-scrollbar-rail--disabled`)),a&&(n?a.classList.remove(`${r}-scrollbar-rail--disabled`):a.classList.add(`${r}-scrollbar-rail--disabled`))}),r(()=>{e.container||Z()}),i(()=>{I!==void 0&&window.clearTimeout(I),L!==void 0&&window.clearTimeout(L),T(`mousemove`,window,Q,!0),T(`mouseup`,window,$,!0)});let Pe=l(()=>{let{common:{cubicBezierEaseInOut:e},self:{color:t,colorHover:n,height:r,width:i,borderRadius:a,railInsetHorizontalTop:s,railInsetHorizontalBottom:c,railInsetVerticalRight:l,railInsetVerticalLeft:u,railColor:d}}=B.value,{top:f,right:p,bottom:m,left:h}=S(s),{top:g,right:_,bottom:v,left:y}=S(c),{top:b,right:x,bottom:C,left:w}=S(o?.value?j(l):l),{top:T,right:E,bottom:D,left:ee}=S(o?.value?j(u):u);return{"--n-scrollbar-bezier":e,"--n-scrollbar-color":t,"--n-scrollbar-color-hover":n,"--n-scrollbar-border-radius":a,"--n-scrollbar-width":i,"--n-scrollbar-height":r,"--n-scrollbar-rail-top-horizontal-top":f,"--n-scrollbar-rail-right-horizontal-top":p,"--n-scrollbar-rail-bottom-horizontal-top":m,"--n-scrollbar-rail-left-horizontal-top":h,"--n-scrollbar-rail-top-horizontal-bottom":g,"--n-scrollbar-rail-right-horizontal-bottom":_,"--n-scrollbar-rail-bottom-horizontal-bottom":v,"--n-scrollbar-rail-left-horizontal-bottom":y,"--n-scrollbar-rail-top-vertical-right":b,"--n-scrollbar-rail-right-vertical-right":x,"--n-scrollbar-rail-bottom-vertical-right":C,"--n-scrollbar-rail-left-vertical-right":w,"--n-scrollbar-rail-top-vertical-left":T,"--n-scrollbar-rail-right-vertical-left":E,"--n-scrollbar-rail-bottom-vertical-left":D,"--n-scrollbar-rail-left-vertical-left":ee,"--n-scrollbar-rail-color":d}}),Fe=n?ee(`scrollbar`,void 0,Pe,e):void 0;return Object.assign(Object.assign({},{scrollTo:K,scrollBy:ye,sync:Z,syncUnifiedContainer:Oe,handleMouseEnterWrapper:be,handleMouseLeaveWrapper:xe}),{mergedClsPrefix:t,rtlEnabled:o,containerScrollTop:O,wrapperRef:s,containerRef:c,contentRef:u,yRailRef:d,xRailRef:p,needYBar:U,needXBar:W,yBarSizePx:ce,xBarSizePx:le,yBarTopPx:de,xBarLeftPx:pe,isShowXBar:me,isShowYBar:he,isIos:se,handleScroll:Ee,handleContentResize:_e,handleContainerResize:ve,handleYScrollMouseDown:Ne,handleXScrollMouseDown:Ae,containerWidth:y,cssVars:n?void 0:Pe,themeClass:Fe?.themeClass,onRender:Fe?.onRender})},render(){let{$slots:e,mergedClsPrefix:t,triggerDisplayManually:n,rtlEnabled:r,internalHoistYRail:i,yPlacement:s,xPlacement:c,xScrollable:l}=this;if(!this.scrollable)return e.default?.call(e);let f=this.trigger===`none`,p=(e,n)=>a(`div`,{ref:`yRailRef`,class:[`${t}-scrollbar-rail`,`${t}-scrollbar-rail--vertical`,`${t}-scrollbar-rail--vertical--${s}`,e],"data-scrollbar-rail":!0,style:[n||``,this.verticalRailStyle],"aria-hidden":!0},a(f?M:d,f?null:{name:`fade-in-transition`},{default:()=>this.needYBar&&this.isShowYBar&&!this.isIos?a(`div`,{class:`${t}-scrollbar-rail__scrollbar`,style:{height:this.yBarSizePx,top:this.yBarTopPx},onMousedown:this.handleYScrollMouseDown}):null})),m=()=>{var s;return(s=this.onRender)==null||s.call(this),a(`div`,o(this.$attrs,{role:`none`,ref:`wrapperRef`,class:[`${t}-scrollbar`,this.themeClass,r&&`${t}-scrollbar--rtl`],style:this.cssVars,onMouseenter:n?void 0:this.handleMouseEnterWrapper,onMouseleave:n?void 0:this.handleMouseLeaveWrapper}),[this.container?e.default?.call(e):a(`div`,{role:`none`,ref:`containerRef`,class:[`${t}-scrollbar-container`,this.containerClass],style:[this.containerStyle,this.internalExposeWidthCssVar?{"--n-scrollbar-current-width":x(this.containerWidth)}:void 0],onScroll:this.handleScroll,onWheel:this.onWheel},a(E,{onResize:this.handleContentResize},{default:()=>a(`div`,{ref:`contentRef`,role:`none`,style:[{width:this.xScrollable?`fit-content`:null},this.contentStyle],class:[`${t}-scrollbar-content`,this.contentClass]},e)})),i?null:p(void 0,void 0),l&&a(`div`,{ref:`xRailRef`,class:[`${t}-scrollbar-rail`,`${t}-scrollbar-rail--horizontal`,`${t}-scrollbar-rail--horizontal--${c}`],style:this.horizontalRailStyle,"data-scrollbar-rail":!0,"aria-hidden":!0},a(f?M:d,f?null:{name:`fade-in-transition`},{default:()=>this.needXBar&&this.isShowXBar&&!this.isIos?a(`div`,{class:`${t}-scrollbar-rail__scrollbar`,style:{width:this.xBarSizePx,right:r?this.xBarLeftPx:void 0,left:r?void 0:this.xBarLeftPx},onMousedown:this.handleXScrollMouseDown}):null}))])},h=this.container?m():a(E,{onResize:this.handleContainerResize},{default:m});return i?a(u,null,h,p(this.themeClass,this.cssVars)):h}}),P=N;export{k as a,re as i,P as n,M as r,N as t};

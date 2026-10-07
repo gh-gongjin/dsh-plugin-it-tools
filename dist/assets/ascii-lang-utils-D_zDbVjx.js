@@ -1,0 +1,18 @@
+function e(e){return e.replace(/[<>&'"]/g,e=>{switch(e){case`<`:return`&lt;`;case`>`:return`&gt;`;case`&`:return`&amp;`;case`'`:return`&apos;`;case`"`:return`&quot;`}return``})}var t=``,n=`\\\\'"`,r=[{id:`raw`,name:`Raw Text`,cr:`
+`,start_quote:``,prefix:``,suffix:``,begin:``,end:``,escape:t},{id:`bash`,name:`Bash`,crlf:`\\n`,start_quote:`"`,prefix:`echo `,suffix:``,begin:``,end:``,escape:`\\\\"`},{id:`pwsh`,name:`PowerShell`,crlf:`\\n`,start_quote:`"`,prefix:`Write-Output `,suffix:``,begin:``,end:``,escape:`\\\\'`},{id:`c`,name:`C`,crlf:`\\n`,start_quote:`"`,prefix:`printf(`,suffix:`);`,suffix_eol:`\\n`,begin:`#include <stdio.h>
+`,end:``,escape:n},{id:`cpp`,name:`C++`,crlf:`\\n`,start_quote:`"`,prefix:`std::cout << `,suffix:`;`,suffix_eol:`\\n`,begin:`#include <iostream>
+`,end:``,escape:n},{id:`csharp`,name:`C#`,crlf:`\\n`,start_quote:`"`,prefix:`Console.WriteLine(`,suffix:`);`,begin:`using System;
+`,end:``,escape:e=>e.replace(/[\\'"]/g,e=>`\\${e}`).replace(/\t/g,`\\t`)},{id:`csharp_verb`,name:`C# (Verbatim)`,crlf:`" + "\\n" + @"`,start_quote:`@"`,end_quote:`"`,prefix:`Console.WriteLine(`,suffix:`);`,begin:`using System;
+`,end:``,escape:e=>e.replace(/["]/g,`""`).replace(/\t/g,`\\t`)},{id:`csharp_interf`,name:`C# (Interpolated)`,crlf:`\\n`,start_quote:`$"`,end_quote:`"`,prefix:`Console.WriteLine(`,suffix:`);`,begin:`using System;
+`,end:``,escape:e=>e.replace(/["{}]/g,e=>e+e).replace(/\t/g,`\\t`)},{id:`csharp_raw`,name:`C# (Raw)`,crlf:`
+`,start_quote:`"""`,prefix:`Console.WriteLine(`,suffix:`);`,begin:`using System;
+`,end:``,escape:t},{id:`vbnet`,name:`VB.Net`,crlf:`" & vbCrLf & "`,start_quote:`"`,prefix:`Console.WriteLine(`,suffix:`)`,begin:``,end:``,escape:e=>e.replace(/"/g,`""`)},{id:`node`,name:`Node.js`,crlf:`\\n`,start_quote:`"`,prefix:`console.log(`,suffix:`);`,begin:``,end:``,escape:n},{id:`python`,name:`Python`,crlf:`\\n`,start_quote:`"`,prefix:`print(`,suffix:`)`,begin:``,end:``,escape:`\\\\"`},{id:`html`,name:`HTML`,crlf:`<br />`,start_quote:``,prefix:``,suffix:``,begin:`<pre>
+`,end:`
+</pre>`,escape:t=>e(t)},{id:`rust`,name:`Rust`,crlf:`\\n`,start_quote:`"`,prefix:`println!(`,suffix:`);`,begin:``,end:``,escape:n},{id:`go`,name:`Go`,crlf:`\\n`,start_quote:`"`,prefix:`fmt.Println(`,suffix:`)`,begin:`import "fmt"
+`,end:``,escape:n},{id:`ruby`,name:`Ruby`,crlf:`\\n`,start_quote:`"`,prefix:`puts `,suffix:``,begin:``,end:``,escape:n},{id:`php`,name:`PHP`,crlf:`\\n`,start_quote:`"`,prefix:`echo `,suffix:`;`,suffix_eol:`\\n`,begin:`<?php
+`,end:`
+?>`,escape:n},{id:`swift`,name:`Swift`,crlf:`\\n`,start_quote:`"`,prefix:`print(`,suffix:`)`,begin:``,end:``,escape:n},{id:`kotlin`,name:`Kotlin`,crlf:`\\n`,start_quote:`"`,prefix:`println(`,suffix:`)`,begin:``,end:``,escape:n},{id:`sql`,name:`SQL`,crlf:`' + CHAR(10 + '`,start_quote:`'`,prefix:`SELECT `,suffix:``,suffix_eol:`\\n`,begin:``,end:``,escape:e=>e.replace(/'/g,`''`)},{id:`java`,name:`Java`,crlf:`\\n`,start_quote:`"`,prefix:`System.out.println(`,suffix:`);`,begin:``,end:``,escape:n}];function i(e,t){let n=r.find(e=>e.id===t);return n?n.begin+e.split(`
+`).map(e=>n.prefix+a(e,t,{suffix_eol:n.suffix_eol||``})+n.suffix).join(`
+`)+n.end:e}function a(e,t,n){let i=r.find(e=>e.id===t);if(!i)return e;let a=typeof i.escape==`function`?i.escape:function(e){return i.escape?e.replace(RegExp(`([${i.escape}])`,`g`),`\\$1`):e},o=function(e){let t=a(e);return n.single_linize?t.replace(/\n/g,i.crlf||`\\n`):t};return(n.single_linize?[e]:e.split(`
+`)).map(e=>i.start_quote+o(e)+(n.suffix_eol||``)+(i.end_quote||i.start_quote)).join(`
+`)}export{r as n,i as r,a as t};

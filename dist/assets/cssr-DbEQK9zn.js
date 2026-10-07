@@ -1,0 +1,1 @@
+import{g as e}from"./use-theme--pjWdM-N.js";var{c:t}=e(),n=`vueuc-style`;export{n,t};

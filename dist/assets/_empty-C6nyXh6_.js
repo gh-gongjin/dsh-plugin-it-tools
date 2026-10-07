@@ -1,0 +1,1 @@
+import{n as e,r as t}from"./rolldown-runtime-DAXXjFlN.js";var n=t({readFile:()=>r,writeFile:()=>i});function r(){}function i(){}var a=e((()=>{}));export{i,a as n,r,n as t};

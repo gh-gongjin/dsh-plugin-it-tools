@@ -1,0 +1,1 @@
+import{F as e,I as t,b as n}from"./vue.runtime.esm-bundler-DZZTqpJU.js";import{t as r}from"./light-CLwlD-S_.js";import{t as i}from"./context-DG69g5IX.js";e();function a(){let e=t(i,null);return n(()=>{if(e===null)return r;let{mergedThemeRef:{value:t},mergedThemeOverridesRef:{value:n}}=e,i=t?.common||r;return n?.common?Object.assign({},i,n.common):i})}export{a as t};

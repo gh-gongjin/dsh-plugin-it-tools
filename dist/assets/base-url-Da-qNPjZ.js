@@ -1,0 +1,1 @@
+function e(e,t){if(!e)return`/`;try{let{pathname:n}=new URL(e,t);return n.endsWith(`/`)?n:`${n}/`}catch{return`/`}}var t=typeof document>`u`?`/`:e(document.querySelector(`base`)?.getAttribute(`href`),document.URL);export{t};

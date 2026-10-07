@@ -1,0 +1,1 @@
+import{F as e,b as t}from"./vue.runtime.esm-bundler-DZZTqpJU.js";e();function n(e,n){return t(()=>{for(let t of n)if(e[t]!==void 0)return e[t];return e[n[n.length-1]]})}export{n as t};

@@ -1,0 +1,1 @@
+import{F as e,b as t}from"./vue.runtime.esm-bundler-DZZTqpJU.js";import{t as n}from"./style.store-cW-zyPhL.js";e();function r(e){return{themes:e,useTheme(){let r=n();return t(()=>e[r.isDarkTheme?`dark`:`light`])}}}export{r as t};

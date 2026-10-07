@@ -1,0 +1,1 @@
+function e(e){let t=e?.constructor;return e===(typeof t==`function`?t.prototype:Object.prototype)}export{e as t};

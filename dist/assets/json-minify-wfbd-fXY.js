@@ -1,0 +1,5 @@
+import{o as e}from"./rolldown-runtime-DAXXjFlN.js";import{A as t,Et as n,F as r,S as i,q as a,ut as o}from"./vue.runtime.esm-bundler-DZZTqpJU.js";import{t as s}from"./dist-CcFCmzk9.js";import{n as c}from"./vue-i18n.runtime-CdHdz6Iq.js";import{t as l}from"./defaults-CYWGbL02.js";import{t as u}from"./FormatTransformer-CLmOzBNF.js";r(),o();var d=e(s(),1),f=`{
+	"hello": [
+		"world"
+	]
+}`,p=t({__name:`json-minify`,setup(e){let{t}=c(),r=e=>l(()=>JSON.stringify(JSON.parseBigNum(e),null,0),``),o=[{validator:e=>e===``||d.default.parse(e),message:t(`tools.json-minify.texts.message-provided-json-is-not-valid`)}];return(e,s)=>{let c=u;return a(),i(c,{"input-label":n(t)(`tools.json-minify.texts.input-label-your-raw-json`),"input-default":f,"input-placeholder":n(t)(`tools.json-minify.texts.input-placeholder-paste-your-raw-json-here`),"output-label":n(t)(`tools.json-minify.texts.output-label-minified-version-of-your-json`),"output-language":`json`,"input-validation-rules":o,transformer:r,"download-file-name":`output.json`},null,8,[`input-label`,`input-placeholder`,`output-label`])}}});export{p as default};

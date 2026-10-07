@@ -1,0 +1,1 @@
+function e(e,t,n=1){if(t??(t=e,e=0),!Number.isInteger(n)||n===0)throw Error(`The step value must be a non-zero integer.`);let r=Math.max(Math.ceil((t-e)/n),0),i=Array(r);for(let t=0;t<r;t++)i[t]=e+t*n;return i}export{e as t};

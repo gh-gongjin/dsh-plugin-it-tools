@@ -1,0 +1,1 @@
+import{F as e,b as t,nt as n,ut as r,vt as i}from"./vue.runtime.esm-bundler-DZZTqpJU.js";e(),r();function a(e){let r=t(e),a=i(r.value);return n(r,e=>{a.value=e}),typeof e==`function`?a:{__v_isRef:!0,get value(){return a.value},set value(t){e.set(t)}}}export{a as t};

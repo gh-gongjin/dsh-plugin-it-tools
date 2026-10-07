@@ -1,0 +1,4 @@
+function e(e,n=2){let r=` `.repeat(n);return t(e).split(/\r?\n/).map(e=>{if(!e?.trim()||e.trimStart().startsWith(`#`))return e;let t=e.match(/(?:[^\s"']+|"[^"]*"|'[^']*')+/g)||[];if(t.length===0)return e;let n=[],i=!1;for(let e=0;e<t.length;e++){let a=t[e];a.startsWith(`-`)?(!i&&n.length&&(n[n.length-1]+=` \\`),i=!0,e+1<t.length&&!t[e+1].startsWith(`-`)?(n.push(`${r}${a} ${t[e+1]} \\`),e++):n.push(`${r}${a} \\`)):i?n.push(`${r}${a}`):n.length?n[0]=`${n[0]} ${a}`:n.push(a)}return n.join(`
+`)}).join(`
+`)}function t(e){let t=e.trim().split(/\r?\n/),n=[],r=[],i=()=>{r.length>0&&(n.push(r.join(` `).trim()),r=[])};for(let e of t){let t=e.trimEnd();t.endsWith(`\\`)?r.push(t.slice(0,-1).trim()):r.length>0?(r.push(t.trim()),i()):n.push(t)}return i(),n.join(`
+`)}export{e as n,t};

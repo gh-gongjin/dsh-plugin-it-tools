@@ -1,0 +1,1 @@
+function e(e,t){return e===t||Number.isNaN(e)&&Number.isNaN(t)}export{e as t};

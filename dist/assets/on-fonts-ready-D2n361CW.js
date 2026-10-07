@@ -1,0 +1,1 @@
+import{F as e,G as t,H as n}from"./vue.runtime.esm-bundler-DZZTqpJU.js";import{n as r}from"./utils-Lz-QRq-J.js";e();var i=r?document?.fonts?.ready:void 0,a=!1;i===void 0?a=!0:i.then(()=>{a=!0});function o(e){if(a)return;let r=!1;t(()=>{a||i?.then(()=>{r||e()})}),n(()=>{r=!0})}export{o as t};

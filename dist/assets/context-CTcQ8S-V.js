@@ -1,0 +1,1 @@
+import{t as e}from"./create-injection-key-Dfvzj6n2.js";var t=e(`n-message-api`),n=e(`n-message-provider`);export{n,t};

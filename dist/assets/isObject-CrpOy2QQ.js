@@ -1,0 +1,1 @@
+function e(e){return e!==null&&(typeof e==`object`||typeof e==`function`)}export{e as t};

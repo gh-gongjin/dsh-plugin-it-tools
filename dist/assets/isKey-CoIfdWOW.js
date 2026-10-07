@@ -1,0 +1,1 @@
+import{t as e}from"./isSymbol-CuJ7x3zC.js";var t=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,n=/^\w*$/;function r(r,i){return Array.isArray(r)?!1:typeof r==`number`||typeof r==`boolean`||r==null||e(r)?!0:typeof r==`string`&&(n.test(r)||!t.test(r))||i!=null&&Object.hasOwn(i,r)}export{r as t};

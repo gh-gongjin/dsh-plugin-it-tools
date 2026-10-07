@@ -1,0 +1,1 @@
+function e(e,t){try{return e()}catch{return t}}async function t(e,t){try{return await e()}catch{return t}}export{t as n,e as t};

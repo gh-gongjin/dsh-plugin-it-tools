@@ -1,0 +1,1 @@
+function e(e){return typeof e==`symbol`||e instanceof Symbol}export{e as t};

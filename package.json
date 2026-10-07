@@ -1,0 +1,23 @@
+{
+  "name": "dsh-plugin-it-tools",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DSH IT 工具箱插件：it-tools（sharevb fork）全量 474 个工具，中文分类壳 + 同源 iframe。全程 GET/HEAD 只读，不写宿主存储。",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": { "default": "./client.js" },
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "lib", "client.js", "cordis.yml", "catalog", "dist", "README.md", "LICENSE"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh-gongjin/dsh-plugin-it-tools.git"
+  },
+  "keywords": ["dsh", "dsh-plugin", "it-tools", "toolbox", "developer-tools"],
+  "license": "GPL-3.0-only",
+  "dsh": {
+    "bundle": { "patch": "cordis.yml" },
+    "client": { "platform": "web", "immediately": true }
+  }
+}
